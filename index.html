@@ -296,25 +296,21 @@ footer{
 
 <body>
 
-<!-- MENU -->
-
 <nav>
     <div class="nav-container">
 
         <div class="logo">🌿 OGRODNICTWO</div>
 
         <ul>
-            <li><a href="#uslugi">Terminy</a></li>
             <li><a href="#uslugi">Usługi</a></li>
             <li><a href="#cennik">Cennik</a></li>
             <li><a href="#opinie">Opinie</a></li>
+            <li><a href="terminy.html">Terminy</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
 
     </div>
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -335,17 +331,13 @@ footer{
 
 </section>
 
-<!-- USŁUGI -->
-
 <section class="container" id="uslugi">
-
     <div class="section-title">
         <h2>Nasze Usługi</h2>
         <p>Profesjonalne prace ogrodowe i terenowe</p>
     </div>
 
     <div class="cards">
-
         <div class="card">
             <h3>🌿 Koszenie trawy</h3>
             <p>Koszenie ogrodów, działek oraz terenów zielonych.</p>
@@ -353,113 +345,78 @@ footer{
 
         <div class="card">
             <h3>🍂 Grabienie i porządki</h3>
-            <p>Liście, chwasty, porządki sezonowe i zaniedbane ogrody.</p>
+            <p>Liście, chwasty, porządki sezonowe.</p>
         </div>
 
         <div class="card">
             <h3>🛠️ Montaż altan</h3>
-            <p>Składanie altanek, pawilonów i konstrukcji ogrodowych.</p>
+            <p>Składanie altanek i konstrukcji ogrodowych.</p>
         </div>
 
         <div class="card">
             <h3>🚛 Oczyszczanie działek</h3>
-            <p>Pomoc przy ogarnięciu działek i terenów wokół domu.</p>
+            <p>Sprzątanie zaniedbanych terenów.</p>
         </div>
-
     </div>
-
 </section>
 
-<!-- CENNIK -->
-
 <section class="container" id="cennik">
-
     <div class="section-title">
         <h2>Cennik</h2>
-        <p>Przejrzyste i uczciwe wyceny</p>
     </div>
 
     <div class="pricing">
-
         <div class="price-box">
             <h3>Usługi ogrodnicze</h3>
-            <div class="price">od 70 zł/h przy 2 pracownikach</div>
-            <p>Cena zależna od regionu.</p>
+            <div class="price">od 70 zł/h</div>
+            <p>2 pracowników</p>
         </div>
 
         <div class="price-box">
             <h3>Dojazd</h3>
             <div class="price">od 15 zł</div>
-            <p>W zależności od lokalizacji zlecenia.</p>
         </div>
-
     </div>
-
 </section>
-
-<!-- OPINIE -->
 
 <section class="container" id="opinie">
-
     <div class="section-title">
         <h2>Opinie klientów</h2>
-        <p>Dodaj swoją opinię po wykonanej usłudze</p>
     </div>
 
-    <div class="testimonials" id="reviewsContainer">
-    </div>
+    <div class="testimonials" id="reviewsContainer"></div>
 
     <div class="review-form">
-
         <h3>Dodaj opinię</h3>
-
-        <input type="text" id="name" placeholder="Imię lub pseudonim" required>
-
-        <textarea id="review" rows="5" placeholder="Napisz opinię..." required></textarea>
-
+        <input type="text" id="name" placeholder="Imię" required>
+        <textarea id="review" rows="5" placeholder="Opinia..." required></textarea>
         <button onclick="addReview()">Dodaj opinię</button>
-
     </div>
-
 </section>
 
-<!-- KONTAKT -->
-
 <section class="container" id="kontakt">
-
     <div class="contact">
-
         <h2>Kontakt</h2>
-
-        <p>📞 Telefon: 571 021 769</p>
+        <p>📞 571 021 769</p>
         <p>📍 Łódź i okolice</p>
-        <p>🕒 Szybkie terminy realizacji</p>
-
-        <br>
 
         <a href="tel:+48571021769" class="btn btn-main">
             Zadzwoń teraz
         </a>
-
     </div>
-
 </section>
-
-<!-- FOOTER -->
 
 <footer>
     © 2026 Usługi Ogrodnicze | Łódź i okolice
 </footer>
 
 <script>
-
 function addReview() {
-
     const name = document.getElementById('name').value.trim();
     const review = document.getElementById('review').value.trim();
 
-    if(name === '' || review === '') {
-        alert('Podaj imię/pseudonim oraz opinię.');
+    if(!name || !review){
+        alert('Uzupełnij dane');
         return;
     }
 
@@ -468,19 +425,13 @@ function addReview() {
     const div = document.createElement('div');
     div.classList.add('testimonial');
 
-    div.innerHTML = `
-        ⭐⭐⭐⭐⭐<br><br>
-        "${review}"<br><br>
-        <strong>- ${name}</strong>
-    `;
+    div.innerHTML = `⭐⭐⭐⭐⭐<br><br>"${review}"<br><br><strong>- ${name}</strong>`;
 
     container.prepend(div);
 
     document.getElementById('name').value = '';
     document.getElementById('review').value = '';
-
 }
-
 </script>
 
 </body>
