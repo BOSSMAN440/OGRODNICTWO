@@ -163,32 +163,37 @@ nav ul li a:hover{
     color:#2f7d32;
 }
 
-/* CENNIK */
+/* TABELA CENNIK */
 
-.pricing{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.price-box{
+.price-table{
+    width:100%;
+    border-collapse:collapse;
     background:white;
     border-radius:18px;
-    padding:35px;
-    text-align:center;
+    overflow:hidden;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.price-box h3{
-    margin-bottom:15px;
-    color:#2f7d32;
+.price-table th{
+    background:#2f7d32;
+    color:white;
+    padding:18px;
+    text-align:left;
+    font-size:16px;
 }
 
-.price{
-    font-size:42px;
+.price-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+}
+
+.price-table tr:hover{
+    background:#f7fff7;
+}
+
+.highlight{
     font-weight:700;
     color:#1b5e20;
-    margin-bottom:10px;
 }
 
 /* OPINIE */
@@ -289,6 +294,15 @@ footer{
         font-size:14px;
     }
 
+    .price-table{
+        font-size:14px;
+    }
+
+    .price-table th,
+    .price-table td{
+        padding:12px;
+    }
+
 }
 
 </style>
@@ -374,24 +388,107 @@ footer{
 <section class="container" id="cennik">
 
     <div class="section-title">
-        <h2>Cennik</h2>
-        <p>Przejrzyste i uczciwe wyceny</p>
+        <h2>Cennik i dojazd</h2>
+        <p>Stałe stawki dla 2 pracowników</p>
     </div>
 
-    <div class="pricing">
+    <div style="overflow-x:auto;">
 
-        <div class="price-box">
-            <h3>Usługi ogrodnicze</h3>
-            <div class="price">od 70 zł/h przy 2 pracownikach</div>
-            <p>Cena zależna od regionu.</p>
-        </div>
+        <table class="price-table">
 
-        <div class="price-box">
-            <h3>Dojazd</h3>
-            <div class="price">od 15 zł</div>
-            <p>W zależności od lokalizacji zlecenia.</p>
-        </div>
+            <thead>
+                <tr>
+                    <th>Rejon / Miejscowość</th>
+                    <th>Stawka</th>
+                    <th>Dojazd</th>
+                    <th>Koszt 3h</th>
+                    <th>Koszt 6h</th>
+                </tr>
+            </thead>
 
+            <tbody>
+
+                <tr>
+                    <td>Łódź (bliskie okolice)</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>0 zł</td>
+                    <td>210 zł</td>
+                    <td>420 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Łódź (dalsze dzielnice)</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>15 zł</td>
+                    <td>225 zł</td>
+                    <td>435 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Rzgów / Starowa Góra</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>25 zł</td>
+                    <td>235 zł</td>
+                    <td>445 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Ksawerów / Pabianice</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>25 zł</td>
+                    <td>235 zł</td>
+                    <td>445 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Zgierz / Aleksandrów Łódzki</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>25 zł</td>
+                    <td>235 zł</td>
+                    <td>445 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Konstantynów / Andrespol</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>25 zł</td>
+                    <td>235 zł</td>
+                    <td>445 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Nowosolna / Wiśniowa Góra</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>30 zł</td>
+                    <td>240 zł</td>
+                    <td>450 zł</td>
+                </tr>
+
+                <tr>
+                    <td>Stryków / Głowno / Brzeziny</td>
+                    <td class="highlight">70 zł / h</td>
+                    <td>40–50 zł</td>
+                    <td>250–260 zł</td>
+                    <td>460–470 zł</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <br><br>
+
+    <div class="card">
+        <h3>✔ Ważne informacje</h3>
+
+        <p>
+            • Praca wykonywana przez 2 pracowników<br>
+            • Stała stawka 70 zł/h<br>
+            • Minimalny czas zlecenia poza Łodzią: 3 godziny<br>
+            • Możliwość wyceny indywidualnej przy większych pracach
+        </p>
     </div>
 
 </section>
