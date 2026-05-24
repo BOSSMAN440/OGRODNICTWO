@@ -10,7 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:'Poppins',sans-serif;
@@ -19,6 +28,7 @@ body{
     line-height:1.6;
 }
 
+/* NAV */
 nav{
     position:fixed;
     top:0;
@@ -37,94 +47,157 @@ nav{
     padding:15px 20px;
 }
 
-.logo{color:white;font-size:22px;font-weight:700;}
-
-nav ul{display:flex;gap:20px;list-style:none;}
-
-nav ul li a{color:white;text-decoration:none;}
-
-.hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1599685315640-9ceab2f8a5f7?q=80&w=1600&auto=format&fit=crop');
-    background-size:cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+.logo{
     color:white;
+    font-size:22px;
+    font-weight:700;
 }
 
-.hero h1{font-size:50px;}
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
 
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#7CFC00;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)),
+    url('https://images.unsplash.com/photo-1599685315640-9ceab2f8a5f7?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:58px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+/* BUTTON */
 .btn{
     display:inline-block;
     padding:14px 28px;
-    background:#2f7d32;
-    color:white;
     border-radius:10px;
     text-decoration:none;
-    margin-top:20px;
+    font-weight:600;
+    transition:0.3s;
 }
 
+.btn-main{
+    background:#2f7d32;
+    color:white;
+}
+
+.btn-main:hover{
+    background:#256428;
+    transform:translateY(-2px);
+}
+
+/* SECTIONS */
 .container{
     max-width:1200px;
     margin:auto;
     padding:80px 20px;
 }
 
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#2f7d32;
+}
+
+/* CARDS */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    gap:25px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
-.testimonial{
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#2f7d32;
+}
+
+/* PRICING */
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.price-box{
     background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-top:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.review-form{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-top:20px;
+.price-box h3{
+    margin-bottom:10px;
+    color:#2f7d32;
 }
 
-input,textarea{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border-radius:10px;
-    border:1px solid #ccc;
+.price{
+    font-size:42px;
+    font-weight:700;
+    color:#1b5e20;
 }
 
-button{
-    margin-top:15px;
-    padding:12px 20px;
-    background:#2f7d32;
-    color:white;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-}
-
+/* CONTACT */
 .contact{
     background:#2f7d32;
     color:white;
-    padding:40px;
     border-radius:20px;
+    padding:50px;
     text-align:center;
+}
+
+.contact h2{
+    margin-bottom:20px;
 }
 
 footer{
@@ -132,7 +205,16 @@ footer{
     color:#aaa;
     text-align:center;
     padding:30px;
+    margin-top:60px;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero h1{font-size:40px;}
+    .hero p{font-size:18px;}
+    nav ul{gap:12px;font-size:14px;}
+}
+
 </style>
 </head>
 
@@ -141,42 +223,68 @@ footer{
 <nav>
 <div class="nav-container">
 <div class="logo">🌿 OGRODNICTWO</div>
+
 <ul>
 <li><a href="#uslugi">Usługi</a></li>
-<li><a href="#opinie">Opinie</a></li>
+<li><a href="#cennik">Cennik</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 </ul>
 </div>
 </nav>
 
 <section class="hero">
-<div>
-<h1>Usługi Ogrodnicze Łódź</h1>
-<p>Profesjonalne prace ogrodowe</p>
-<a class="btn" href="tel:+48571021769">Zadzwoń</a>
+<div class="hero-content">
+<h1>Usługi Ogrodnicze Łódź i okolice</h1>
+<p>Prace ogrodowe, koszenie trawy, porządki działek i montaż altan.</p>
+
+<a href="tel:+48571021769" class="btn btn-main">📞 Zadzwoń teraz</a>
 </div>
 </section>
 
 <section class="container" id="uslugi">
-<h2>Usługi</h2>
+<div class="section-title">
+<h2>Nasze Usługi</h2>
+</div>
+
 <div class="cards">
-<div class="card">Koszenie trawy</div>
-<div class="card">Porządki działek</div>
-<div class="card">Altany</div>
-<div class="card">Sprzątanie terenów</div>
+<div class="card">
+<h3>🌿 Koszenie trawy</h3>
+<p>Profesjonalne koszenie ogrodów i działek.</p>
+</div>
+
+<div class="card">
+<h3>🍂 Porządki działek</h3>
+<p>Sprzątanie i przygotowanie terenów.</p>
+</div>
+
+<div class="card">
+<h3>🛠️ Montaż altan</h3>
+<p>Składanie konstrukcji ogrodowych.</p>
+</div>
+
+<div class="card">
+<h3>🚛 Oczyszczanie terenów</h3>
+<p>Usuwanie nieczystości i chwastów.</p>
+</div>
 </div>
 </section>
 
-<section class="container" id="opinie">
-<h2>Opinie klientów</h2>
+<section class="container" id="cennik">
+<div class="section-title">
+<h2>Cennik</h2>
+</div>
 
-<div id="reviewsContainer"></div>
+<div class="pricing">
+<div class="price-box">
+<h3>Usługi ogrodnicze</h3>
+<div class="price">od 70 zł/h</div>
+<p>2 pracowników</p>
+</div>
 
-<div class="review-form">
-<h3>Dodaj opinię</h3>
-<input id="name" placeholder="Imię">
-<textarea id="review" placeholder="Opinia"></textarea>
-<button onclick="addReview()">Dodaj</button>
+<div class="price-box">
+<h3>Dojazd</h3>
+<div class="price">od 15 zł</div>
+</div>
 </div>
 </section>
 
@@ -184,72 +292,15 @@ footer{
 <div class="contact">
 <h2>Kontakt</h2>
 <p>📞 571 021 769</p>
+<p>📍 Łódź i okolice</p>
+
+<a href="tel:+48571021769" class="btn btn-main">Zadzwoń teraz</a>
 </div>
 </section>
 
-<footer>© 2026 Ogrodnictwo</footer>
-
-<!-- FIREBASE -->
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-
-<script>
-// 🔥 WSTAW SWOJE DANE Z FIREBASE
-const firebaseConfig = {
-    apiKey: "TWOJ_API_KEY",
-    authDomain: "TWOJ_PROJECT.firebaseapp.com",
-    projectId: "TWOJ_PROJECT_ID",
-    storageBucket: "TWOJ_PROJECT.appspot.com",
-    messagingSenderId: "XXX",
-    appId: "XXX"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const reviewsRef = db.collection("reviews");
-
-const container = document.getElementById("reviewsContainer");
-
-// ➕ dodawanie opinii
-function addReview() {
-    const name = document.getElementById("name").value.trim();
-    const review = document.getElementById("review").value.trim();
-
-    if(!name || !review){
-        alert("Uzupełnij dane");
-        return;
-    }
-
-    reviewsRef.add({
-        name,
-        review,
-        created: new Date()
-    });
-
-    document.getElementById("name").value = "";
-    document.getElementById("review").value = "";
-}
-
-// 📡 live opinie
-reviewsRef.orderBy("created","desc").onSnapshot(snapshot => {
-    container.innerHTML = "";
-
-    snapshot.forEach(doc => {
-        const d = doc.data();
-
-        const div = document.createElement("div");
-        div.classList.add("testimonial");
-
-        div.innerHTML = `
-        ⭐⭐⭐⭐⭐<br><br>
-        "${d.review}"<br><br>
-        <strong>- ${d.name}</strong>
-        `;
-
-        container.appendChild(div);
-    });
-});
-</script>
+<footer>
+© 2026 Usługi Ogrodnicze | Łódź i okolice
+</footer>
 
 </body>
 </html>
