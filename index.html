@@ -6,10 +6,19 @@
 
 <title>Usługi Ogrodnicze Łódź i okolice</title>
 
+<meta name="description" content="Usługi ogrodnicze Łódź i okolice. Koszenie trawy, porządki działek, montaż altan. Szybka wycena i dojazd.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* DESIGN SYSTEM */
+:root{
+    --primary:#2e7d32;
+    --accent:#7cb342;
+    --dark:#1b5e20;
+}
 
 *{
     margin:0;
@@ -53,6 +62,14 @@ nav{
     font-weight:700;
 }
 
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+}
+
 nav ul{
     display:flex;
     gap:20px;
@@ -67,14 +84,14 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    color:#7CFC00;
+    color:var(--accent);
 }
 
 /* HERO */
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)),
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
     url('https://images.unsplash.com/photo-1599685315640-9ceab2f8a5f7?q=80&w=1600&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
@@ -91,16 +108,28 @@ nav ul li a:hover{
 }
 
 .hero h1{
-    font-size:58px;
-    margin-bottom:20px;
+    font-size:52px;
+    margin-bottom:15px;
 }
 
 .hero p{
-    font-size:22px;
-    margin-bottom:30px;
+    font-size:20px;
+    margin-bottom:20px;
+    opacity:0.95;
 }
 
-/* BUTTON */
+/* USP */
+.usp{
+    margin:15px 0 25px;
+    font-size:16px;
+    opacity:0.9;
+}
+
+.usp span{
+    display:block;
+}
+
+/* BUTTONS */
 .btn{
     display:inline-block;
     padding:14px 28px;
@@ -108,16 +137,22 @@ nav ul li a:hover{
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
+    margin:5px;
 }
 
 .btn-main{
-    background:#2f7d32;
+    background:var(--primary);
     color:white;
 }
 
 .btn-main:hover{
-    background:#256428;
+    background:var(--dark);
     transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:white;
+    color:var(--primary);
 }
 
 /* SECTIONS */
@@ -133,8 +168,8 @@ nav ul li a:hover{
 }
 
 .section-title h2{
-    font-size:38px;
-    color:#2f7d32;
+    font-size:36px;
+    color:var(--primary);
 }
 
 /* CARDS */
@@ -158,7 +193,15 @@ nav ul li a:hover{
 
 .card h3{
     margin-bottom:10px;
-    color:#2f7d32;
+    color:var(--primary);
+}
+
+/* WHY US */
+.why{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
 }
 
 /* PRICING */
@@ -176,30 +219,29 @@ nav ul li a:hover{
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.price-box h3{
-    margin-bottom:10px;
-    color:#2f7d32;
-}
-
 .price{
     font-size:42px;
     font-weight:700;
-    color:#1b5e20;
+    color:var(--dark);
 }
 
 /* CONTACT */
 .contact{
-    background:#2f7d32;
+    background:var(--primary);
     color:white;
     border-radius:20px;
     padding:50px;
     text-align:center;
 }
 
-.contact h2{
-    margin-bottom:20px;
+/* COUNTER */
+.counter{
+    font-size:22px;
+    margin-top:10px;
+    opacity:0.9;
 }
 
+/* FOOTER */
 footer{
     background:#111;
     color:#aaa;
@@ -210,9 +252,28 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
-    .hero h1{font-size:40px;}
-    .hero p{font-size:18px;}
-    nav ul{gap:12px;font-size:14px;}
+
+    .hero h1{font-size:34px;}
+    .hero p{font-size:16px;}
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:60px;
+        right:20px;
+        background:#000;
+        padding:15px;
+        border-radius:10px;
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
 }
 
 </style>
@@ -224,8 +285,11 @@ footer{
 <div class="nav-container">
 <div class="logo">🌿 OGRODNICTWO</div>
 
-<ul>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<ul id="menu">
 <li><a href="#uslugi">Usługi</a></li>
+<li><a href="#dlaczego">Dlaczego my</a></li>
 <li><a href="#cennik">Cennik</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 </ul>
@@ -234,19 +298,31 @@ footer{
 
 <section class="hero">
 <div class="hero-content">
-<h1>Usługi Ogrodnicze Łódź i okolice</h1>
-<p>Prace ogrodowe, koszenie trawy, porządki działek i montaż altan.</p>
+
+<h1>Profesjonalne usługi ogrodnicze w Łodzi</h1>
+
+<p>Szybko, tanio i bez bałaganu – Twój ogród w dobrych rękach.</p>
+
+<div class="usp">
+<span>✔ Darmowa wycena</span>
+<span>✔ Dojazd w 24h</span>
+<span>✔ Sprzątanie po pracy</span>
+</div>
 
 <a href="tel:+48571021769" class="btn btn-main">📞 Zadzwoń teraz</a>
+<a href="#kontakt" class="btn btn-secondary">💬 Poproś o wycenę</a>
+
 </div>
 </section>
 
 <section class="container" id="uslugi">
+
 <div class="section-title">
 <h2>Nasze Usługi</h2>
 </div>
 
 <div class="cards">
+
 <div class="card">
 <h3>🌿 Koszenie trawy</h3>
 <p>Profesjonalne koszenie ogrodów i działek.</p>
@@ -266,15 +342,38 @@ footer{
 <h3>🚛 Oczyszczanie terenów</h3>
 <p>Usuwanie nieczystości i chwastów.</p>
 </div>
+
 </div>
 </section>
 
+<section class="container" id="dlaczego">
+
+<div class="section-title">
+<h2>Dlaczego warto nas wybrać?</h2>
+</div>
+
+<div class="why">
+✔ 5+ lat doświadczenia<br>
+✔ Nowoczesny sprzęt<br>
+✔ Szybkie terminy<br>
+✔ Pracujemy 7 dni w tygodniu<br>
+✔ Darmowa wycena<br>
+
+<div class="counter">
+📊 Zrealizowanych ogrodów: 120+
+</div>
+</div>
+
+</section>
+
 <section class="container" id="cennik">
+
 <div class="section-title">
 <h2>Cennik</h2>
 </div>
 
 <div class="pricing">
+
 <div class="price-box">
 <h3>Usługi ogrodnicze</h3>
 <div class="price">od 70 zł/h</div>
@@ -285,22 +384,34 @@ footer{
 <h3>Dojazd</h3>
 <div class="price">od 15 zł</div>
 </div>
+
 </div>
 </section>
 
 <section class="container" id="kontakt">
+
 <div class="contact">
+
 <h2>Kontakt</h2>
+
 <p>📞 571 021 769</p>
 <p>📍 Łódź i okolice</p>
 
 <a href="tel:+48571021769" class="btn btn-main">Zadzwoń teraz</a>
+
 </div>
+
 </section>
 
 <footer>
 © 2026 Usługi Ogrodnicze | Łódź i okolice
 </footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
