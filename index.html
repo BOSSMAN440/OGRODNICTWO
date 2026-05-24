@@ -3,140 +3,488 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Usługi Ogrodnicze Łódź i okolice</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f7f4;
-    color: #333;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background: #2f7d32;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
+html{
+    scroll-behavior:smooth;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 36px;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f7f4;
+    color:#333;
+    line-height:1.6;
 }
 
-header p {
-    font-size: 18px;
+/* MENU */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(6px);
+    z-index:1000;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+nav .nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
 }
 
-.section {
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:700;
 }
 
-h2 {
-    color: #2f7d32;
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
 }
 
-.price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1b5e20;
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
 }
 
-.services li {
-    margin: 8px 0;
+nav ul li a:hover{
+    color:#7CFC00;
 }
 
-.button {
-    display: inline-block;
-    background: #2f7d32;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 10px;
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1599685315640-9ceab2f8a5f7?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
-.button:hover {
-    background: #256428;
+.hero-content{
+    max-width:800px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #777;
+.hero h1{
+    font-size:58px;
+    margin-bottom:20px;
 }
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-main{
+    background:#2f7d32;
+    color:white;
+}
+
+.btn-main:hover{
+    background:#256428;
+    transform:translateY(-2px);
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.btn-whatsapp:hover{
+    background:#1ebe5d;
+    transform:translateY(-2px);
+}
+
+/* SEKCJE */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:#2f7d32;
+    margin-bottom:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#2f7d32;
+}
+
+/* CENNIK */
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.price-box{
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.price-box h3{
+    margin-bottom:15px;
+    color:#2f7d32;
+}
+
+.price{
+    font-size:42px;
+    font-weight:700;
+    color:#1b5e20;
+    margin-bottom:10px;
+}
+
+/* GALERIA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* OPINIE */
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.testimonial{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* KONTAKT */
+
+.contact{
+    background:#2f7d32;
+    color:white;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#aaa;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:60px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    nav ul{
+        gap:12px;
+        font-size:14px;
+    }
+
+}
+
 </style>
-
 </head>
 
 <body>
 
-<header>
-    <h1>Usługi Ogrodnicze</h1>
-    <p>Łódź i okolice | Profesjonalne prace ogrodowe i montażowe</p>
-</header>
+<!-- MENU -->
 
-<div class="container">
+<nav>
+    <div class="nav-container">
+        <div class="logo">🌿 OGRODNICTWO</div>
 
-    <div class="section">
-        <h2>O nas</h2>
-        <p>Świadczymy usługi ogrodnicze na terenie Łodzi i okolic. Zajmujemy się zarówno prostymi pracami porządkowymi, jak i montażem altan, pawilonów oraz kompleksowym ogarnianiem ogrodów.</p>
-    </div>
-
-    <div class="section">
-        <h2>Nasze usługi</h2>
-        <ul class="services">
-            <li>✔ Koszenie trawy</li>
-            <li>✔ Grabienie liści</li>
-            <li>✔ Pielenie i porządki w ogrodzie</li>
-            <li>✔ Montaż altan i pawilonów ogrodowych</li>
-            <li>✔ Oczyszczanie działek</li>
-            <li>✔ Prace sezonowe</li>
-            <li>✔ Ogarnięcie zaniedbanych terenów</li>
+        <ul>
+            <li><a href="#uslugi">Usługi</a></li>
+            <li><a href="#cennik">Cennik</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </div>
+</nav>
 
-    <div class="section">
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Usługi Ogrodnicze Łódź i okolice</h1>
+
+        <p>
+            Prace ogrodowe, montaż altan, porządki działek,
+            koszenie trawy oraz kompleksowe ogarnianie terenów zielonych.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="tel:+48XXXXXXXXX" class="btn btn-main">
+                📞 Zadzwoń teraz
+            </a>
+
+            <a href="https://wa.me/48XXXXXXXXX" class="btn btn-whatsapp">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- USŁUGI -->
+
+<section class="container" id="uslugi">
+
+    <div class="section-title">
+        <h2>Nasze Usługi</h2>
+        <p>Profesjonalne prace ogrodowe i terenowe</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌿 Koszenie trawy</h3>
+            <p>Koszenie ogrodów, działek oraz terenów zielonych.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍂 Grabienie i porządki</h3>
+            <p>Liście, chwasty, porządki sezonowe i zaniedbane ogrody.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛠️ Montaż altan</h3>
+            <p>Składanie altanek, pawilonów i konstrukcji ogrodowych.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚛 Oczyszczanie działek</h3>
+            <p>Pomoc przy ogarnięciu działek i terenów wokół domu.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CENNIK -->
+
+<section class="container" id="cennik">
+
+    <div class="section-title">
         <h2>Cennik</h2>
-        <p class="price">40 zł / h za 1 osobę</p>
-        <p>Możliwość pracy w 2 osoby (szybsza realizacja zleceń).</p>
-        <p>Dojazd ustalany indywidualnie w zależności od lokalizacji.</p>
+        <p>Przejrzyste i uczciwe wyceny</p>
     </div>
 
-    <div class="section">
-        <h2>Dlaczego my?</h2>
-        <ul class="services">
-            <li>✔ Szybkie terminy</li>
-            <li>✔ Rzetelna praca</li>
-            <li>✔ Konkretne wyceny przed pracą</li>
-            <li>✔ Działamy na terenie Łodzi i okolic</li>
-        </ul>
+    <div class="pricing">
+
+        <div class="price-box">
+            <h3>1 pracownik</h3>
+            <div class="price">40 zł</div>
+            <p>za godzinę pracy</p>
+        </div>
+
+        <div class="price-box">
+            <h3>2 pracowników</h3>
+            <div class="price">80 zł</div>
+            <p>szybsza realizacja</p>
+        </div>
+
+        <div class="price-box">
+            <h3>Dojazd</h3>
+            <div class="price">od 15 zł</div>
+            <p>w zależności od lokalizacji</p>
+        </div>
+
     </div>
 
-    <div class="section">
+</section>
+
+<!-- GALERIA -->
+
+<section class="container" id="galeria">
+
+    <div class="section-title">
+        <h2>Galeria</h2>
+        <p>Przykładowe zdjęcia prac</p>
+    </div>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+
+</section>
+
+<!-- OPINIE -->
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>Opinie klientów</h2>
+    </div>
+
+    <div class="testimonials">
+
+        <div class="testimonial">
+            ⭐⭐⭐⭐⭐<br><br>
+            "Bardzo szybka i solidna robota. Ogród ogarnięty w jeden dzień."
+        </div>
+
+        <div class="testimonial">
+            ⭐⭐⭐⭐⭐<br><br>
+            "Altanka złożona profesjonalnie, wszystko sprawnie i punktualnie."
+        </div>
+
+        <div class="testimonial">
+            ⭐⭐⭐⭐⭐<br><br>
+            "Dobry kontakt i uczciwa wycena. Polecam."
+        </div>
+
+    </div>
+
+</section>
+
+<!-- KONTAKT -->
+
+<section class="container" id="kontakt">
+
+    <div class="contact">
+
         <h2>Kontakt</h2>
+
         <p>📞 Telefon: +48 XXX XXX XXX</p>
         <p>📍 Łódź i okolice</p>
+        <p>🕒 Szybkie terminy realizacji</p>
 
-        <a class="button" href="tel:+48XXXXXXXXX">Zadzwoń teraz</a>
+        <br>
+
+        <a href="tel:+48XXXXXXXXX" class="btn btn-main">
+            Zadzwoń teraz
+        </a>
+
     </div>
 
-</div>
+</section>
+
+<!-- FOOTER -->
 
 <footer>
-    © 2026 Usługi Ogrodnicze – Łódź i okolice
+    © 2026 Usługi Ogrodnicze | Łódź i okolice
 </footer>
 
 </body>
