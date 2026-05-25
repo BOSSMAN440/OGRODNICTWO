@@ -1,103 +1,281 @@
-<!-- CENNIK -->
-<section class="container" id="cennik">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="section-title">
-<h2>Cennik i dojazd</h2>
-<p>Przejrzyste ceny bez ukrytych kosztów</p>
+<title>Cennik Dojazdu | Usługi Ogrodnicze Łódź</title>
+
+<meta name="description"
+content="Cennik dojazdu – Usługi Ogrodnicze Łódź i okolice. Sprawdź orientacyjne koszty dojazdu.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#2e7d32;
+--accent:#7cb342;
+--dark:#1b5e20;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f4f7f4;
+color:#333;
+line-height:1.6;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(6px);
+z-index:1000;
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+color:white;
+font-size:22px;
+font-weight:700;
+text-decoration:none;
+}
+
+.hero{
+height:60vh;
+
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?q=80&w=1600&auto=format&fit=crop");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.section-title h2{
+font-size:36px;
+color:var(--primary);
+}
+
+.pricing{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+}
+
+.box{
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.08);
+
+text-align:center;
+}
+
+.box h3{
+color:var(--primary);
+margin-bottom:15px;
+}
+
+.price{
+font-size:42px;
+font-weight:700;
+color:var(--dark);
+
+margin-bottom:10px;
+}
+
+.info{
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+margin-top:50px;
+
+text-align:center;
+}
+
+.btn{
+display:inline-block;
+
+margin-top:25px;
+
+padding:14px 28px;
+
+background:var(--primary);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:10px;
+
+font-weight:600;
+
+transition:.3s;
+}
+
+.btn:hover{
+background:var(--dark);
+}
+
+footer{
+background:#111;
+
+color:#aaa;
+
+text-align:center;
+
+padding:30px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+🌿 USŁUGI OGRODNICZE
+</a>
+
 </div>
+</nav>
 
-<div class="price-table">
+<section class="hero">
 
-<table>
+<div>
 
-<thead>
-<tr>
-<th>📍 Rejon / Miejscowość</th>
-<th>💼 Stawka (2 pracowników)</th>
-<th>🚗 Opłata za dojazd</th>
-<th>⏱ Koszt 3h pracy</th>
-<th>🛠 Koszt 6h pracy</th>
-</tr>
-</thead>
+<h1>Cennik Dojazdu</h1>
 
-<tbody>
+<p>Orientacyjny koszt dojazdu na terenie Łodzi i okolic</p>
 
-<tr>
-<td>Łódź (Twoja dzielnica i bliskie okolice)</td>
-<td>70 zł / h</td>
-<td><span class="free">0 zł (gratis)</span></td>
-<td>210 zł</td>
-<td>420 zł</td>
-</tr>
-
-<tr>
-<td>Łódź (dalsze dzielnice / drugi koniec miasta)</td>
-<td>70 zł / h</td>
-<td>15 zł</td>
-<td>225 zł</td>
-<td>435 zł</td>
-</tr>
-
-<tr>
-<td>Rzgów / Starowa Góra</td>
-<td>70 zł / h</td>
-<td>25 zł</td>
-<td>235 zł</td>
-<td>445 zł</td>
-</tr>
-
-<tr>
-<td>Ksawerów / Pabianice</td>
-<td>70 zł / h</td>
-<td>25 zł</td>
-<td>235 zł</td>
-<td>445 zł</td>
-</tr>
-
-<tr>
-<td>Zgierz / Aleksandrów Łódzki</td>
-<td>70 zł / h</td>
-<td>25 zł</td>
-<td>235 zł</td>
-<td>445 zł</td>
-</tr>
-
-<tr>
-<td>Konstantynów Łódzki / Andrespol</td>
-<td>70 zł / h</td>
-<td>25 zł</td>
-<td>235 zł</td>
-<td>445 zł</td>
-</tr>
-
-<tr>
-<td>Nowosolna / Wiśniowa Góra</td>
-<td>70 zł / h</td>
-<td>30 zł</td>
-<td>240 zł</td>
-<td>450 zł</td>
-</tr>
-
-<tr>
-<td>Stryków / Głowno / Brzeziny</td>
-<td>70 zł / h</td>
-<td>40–50 zł</td>
-<td>250–260 zł</td>
-<td>460–470 zł</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-
-<div class="price-note">
-<p>
-✔ Minimalny czas realizacji: <strong>3 godziny</strong><br>
-✔ Cena obejmuje <strong>2 pracowników</strong><br>
-✔ Wycena większych realizacji — indywidualnie
-</p>
 </div>
 
 </section>
+
+<section class="container">
+
+<div class="section-title">
+
+<h2>Stawki dojazdu</h2>
+
+</div>
+
+<div class="pricing">
+
+<div class="box">
+<h3>Łódź</h3>
+<div class="price">od 10 zł</div>
+<p>w zależności od dzielnicy</p>
+</div>
+
+<div class="box">
+<h3>Do 15 km</h3>
+<div class="price">od 20 zł</div>
+<p>poza granicami miasta</p>
+</div>
+
+<div class="box">
+<h3>Powyżej 15 km</h3>
+<div class="price">wycena</div>
+<p>ustalana indywidualnie</p>
+</div>
+
+</div>
+
+<div class="info">
+
+<h2>Potrzebujesz wyceny?</h2>
+
+<p>
+Zadzwoń lub napisz — przygotujemy szybką wycenę dojazdu.
+</p>
+
+<a href="tel:+48571021769" class="btn">
+📞 571 021 769
+</a>
+
+<br>
+
+<a href="index.html" class="btn">
+← Powrót na stronę główną
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Usługi Ogrodnicze | Łódź i okolice
+</footer>
+
+</body>
+</html>
