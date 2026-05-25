@@ -13,7 +13,6 @@
 
 <style>
 
-/* DESIGN SYSTEM */
 :root{
     --primary:#2e7d32;
     --accent:#7cb342;
@@ -37,7 +36,6 @@ body{
     line-height:1.6;
 }
 
-/* NAV */
 nav{
     position:fixed;
     top:0;
@@ -62,7 +60,6 @@ nav{
     font-weight:700;
 }
 
-/* HAMBURGER */
 .menu-toggle{
     display:none;
     font-size:26px;
@@ -87,17 +84,20 @@ nav ul li a:hover{
     color:var(--accent);
 }
 
-/* HERO */
 .hero{
     height:100vh;
+
     background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
     url('https://images.unsplash.com/photo-1599685315640-9ceab2f8a5f7?q=80&w=1600&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
     color:white;
     padding:20px;
@@ -115,28 +115,23 @@ nav ul li a:hover{
 .hero p{
     font-size:20px;
     margin-bottom:20px;
-    opacity:0.95;
 }
 
-/* USP */
 .usp{
-    margin:15px 0 25px;
-    font-size:16px;
-    opacity:0.9;
+    margin:20px 0;
 }
 
 .usp span{
     display:block;
 }
 
-/* BUTTONS */
 .btn{
     display:inline-block;
     padding:14px 28px;
     border-radius:10px;
     text-decoration:none;
     font-weight:600;
-    transition:0.3s;
+    transition:.3s;
     margin:5px;
 }
 
@@ -147,7 +142,6 @@ nav ul li a:hover{
 
 .btn-main:hover{
     background:var(--dark);
-    transform:translateY(-2px);
 }
 
 .btn-secondary{
@@ -155,7 +149,6 @@ nav ul li a:hover{
     color:var(--primary);
 }
 
-/* SECTIONS */
 .container{
     max-width:1200px;
     margin:auto;
@@ -168,112 +161,115 @@ nav ul li a:hover{
 }
 
 .section-title h2{
+    color:var(--primary);
     font-size:36px;
-    color:var(--primary);
 }
 
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    margin-bottom:10px;
-    color:var(--primary);
-}
-
-/* WHY US */
-.why{
-    background:white;
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
-}
-
-/* PRICING */
+.cards,
 .pricing{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
+.card,
 .price-box{
     background:white;
+    padding:30px;
     border-radius:18px;
-    padding:35px;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.why{
+    background:white;
+    padding:40px;
+    border-radius:20px;
 }
 
 .price{
     font-size:42px;
-    font-weight:700;
     color:var(--dark);
+    font-weight:700;
 }
 
-/* CONTACT */
 .contact{
     background:var(--primary);
     color:white;
-    border-radius:20px;
     padding:50px;
+    border-radius:20px;
     text-align:center;
 }
 
-/* COUNTER */
 .counter{
-    font-size:22px;
-    margin-top:10px;
-    opacity:0.9;
+    margin-top:15px;
 }
 
-/* FOOTER */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+}
+
 footer{
     background:#111;
     color:#aaa;
     text-align:center;
     padding:30px;
-    margin-top:60px;
 }
 
-/* MOBILE */
 @media(max-width:768px){
 
-    .hero h1{font-size:34px;}
-    .hero p{font-size:16px;}
+.hero h1{
+font-size:34px;
+}
 
-    nav ul{
-        display:none;
-        flex-direction:column;
-        position:absolute;
-        top:60px;
-        right:20px;
-        background:#000;
-        padding:15px;
-        border-radius:10px;
-    }
+.hero p{
+font-size:16px;
+}
 
-    nav ul.show{
-        display:flex;
-    }
+nav ul{
+display:none;
 
-    .menu-toggle{
-        display:block;
-    }
+flex-direction:column;
+
+position:absolute;
+
+top:60px;
+right:20px;
+
+background:black;
+
+padding:15px;
+
+border-radius:10px;
+}
+
+nav ul.show{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
 }
 
 </style>
@@ -282,38 +278,55 @@ footer{
 <body>
 
 <nav>
+
 <div class="nav-container">
+
 <div class="logo">🌿 USŁUGI OGRODNICZE</div>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 <ul id="menu">
+
 <li><a href="#uslugi">Usługi</a></li>
+<li><a href="#realizacje">Realizacje</a></li>
 <li><a href="#dlaczego">Dlaczego my</a></li>
 <li><a href="#cennik">Cennik</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
+
 </ul>
+
 </div>
+
 </nav>
 
 <section class="hero">
+
 <div class="hero-content">
 
 <h1>Profesjonalne usługi ogrodnicze w Łodzi</h1>
-    
+
 <p>Działamy również poza Łodzią.</p>
+
 <p>Szybko, tanio i bez bałaganu – Twój ogród w dobrych rękach.</p>
 
 <div class="usp">
+
 <span>✔ Darmowa wycena</span>
 <span>✔ Dojazd w 24h</span>
 <span>✔ Sprzątanie po pracy</span>
-</div>
-
-<a href="tel:+48571021769" class="btn btn-main">📞 Zadzwoń teraz</a>
-<a href="#kontakt" class="btn btn-secondary">💬 Poproś o wycenę</a>
 
 </div>
+
+<a href="tel:+48571021769" class="btn btn-main">
+📞 Zadzwoń teraz
+</a>
+
+<a href="#kontakt" class="btn btn-secondary">
+💬 Poproś o wycenę
+</a>
+
+</div>
+
 </section>
 
 <section class="container" id="uslugi">
@@ -345,6 +358,31 @@ footer{
 </div>
 
 </div>
+
+</section>
+
+<section class="container" id="realizacje">
+
+<div class="section-title">
+
+<h2>Nasze realizacje</h2>
+
+<p>Zobacz efekty naszych prac</p>
+
+</div>
+
+<div class="gallery">
+
+<img
+src="https://i.postimg.cc/631kYFrb/noweogrod2.jpg"
+alt="Realizacja 1">
+
+<img
+src="https://i.postimg.cc/BnBQMQX5/noweogrod1.png"
+alt="Realizacja 2">
+
+</div>
+
 </section>
 
 <section class="container" id="dlaczego">
@@ -354,14 +392,16 @@ footer{
 </div>
 
 <div class="why">
+
 ✔ Posiadamy doświadczenie<br>
-✔ dogodne terminy dla klienta<br>
-✔ Pracujemy od poniedziałku do soboty
+✔ Dogodne terminy dla klienta<br>
+✔ Pracujemy od poniedziałku do soboty<br>
 ✔ Darmowa wycena<br>
 
 <div class="counter">
 🌿 Twój ogród w dobrych rękach
 </div>
+
 </div>
 
 </section>
@@ -386,6 +426,7 @@ footer{
 </div>
 
 </div>
+
 </section>
 
 <section class="container" id="kontakt">
@@ -397,9 +438,16 @@ footer{
 <p>📞 571 021 769</p>
 <p>📧 pawlakk702@gmail.com</p>
 <p>📍 Łódź i okolice</p>
-<p>🌿 Świadczymy usługi ogrodnicze na terenie Łodzi oraz okolicznych miejscowości</p>
 
-<a href="tel:+48571021769" class="btn btn-main">Zadzwoń teraz</a>
+<p>
+🌿 Świadczymy usługi ogrodnicze na terenie Łodzi oraz okolicznych miejscowości
+</p>
+
+<br>
+
+<a href="tel:+48571021769" class="btn btn-secondary">
+Zadzwoń teraz
+</a>
 
 </div>
 
@@ -410,9 +458,14 @@ footer{
 </footer>
 
 <script>
+
 function toggleMenu(){
-    document.getElementById("menu").classList.toggle("show");
+document
+.getElementById("menu")
+.classList
+.toggle("show");
 }
+
 </script>
 
 </body>
