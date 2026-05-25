@@ -3,379 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sezon Zimowy - Usługi Ogrodnicze Łódź</title>
 
-<title>Terminy | Usługi Ogrodnicze</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:'Poppins',sans-serif;
+margin:0;
+font-family:Poppins;
 background:#f4f7f4;
-color:#333;
 }
 
-/* HEADER */
-
-header{
-background:#2f7d32;
+.header{
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1608889175123-8b7b6c1a6c02?auto=format&fit=crop&w=1600');
+background-size:cover;
 color:white;
-padding:35px 20px;
 text-align:center;
+padding:120px 20px;
 }
-
-header h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-/* CONTAINER */
 
 .container{
-max-width:1400px;
+max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:50px 20px;
 }
 
-/* LOGIN */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-.login-box{
+.card{
 background:white;
 padding:25px;
-border-radius:18px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-max-width:420px;
-margin:0 auto 40px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-.login-box h2{
-margin-bottom:15px;
-color:#2f7d32;
-}
-
-.login-box input{
-width:100%;
-padding:14px;
-border:1px solid #ccc;
+.btn{
+display:inline-block;
+padding:12px 20px;
+background:#1b5e20;
+color:white;
+text-decoration:none;
 border-radius:10px;
-margin-top:10px;
-font-family:'Poppins',sans-serif;
-}
-
-.login-box button{
-width:100%;
 margin-top:15px;
-padding:14px;
-border:none;
-border-radius:10px;
-background:#2f7d32;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
 }
-
-.login-box button:hover{
-background:#256428;
-}
-
-/* PANEL ADMIN */
-
-.admin-panel{
-display:none;
-background:#fff8dc;
-border:2px solid #ffd700;
-padding:18px;
-border-radius:14px;
-text-align:center;
-margin-bottom:30px;
-font-weight:600;
-}
-
-/* LEGENDA */
-
-.legend{
-display:flex;
-justify-content:center;
-gap:30px;
-margin-bottom:35px;
-flex-wrap:wrap;
-}
-
-.legend-item{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:500;
-}
-
-.color-box{
-width:20px;
-height:20px;
-border-radius:6px;
-}
-
-.green{
-background:#2f7d32;
-}
-
-.red{
-background:#d62828;
-}
-
-/* KALENDARZ */
-
-.calendar{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-}
-
-.month{
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.month h2{
-text-align:center;
-margin-bottom:20px;
-color:#2f7d32;
-}
-
-.days{
-display:grid;
-grid-template-columns:repeat(7,1fr);
-gap:8px;
-}
-
-.day{
-padding:12px;
-text-align:center;
-border-radius:10px;
-color:white;
-font-weight:600;
-cursor:default;
-user-select:none;
-transition:0.2s;
-}
-
-.free{
-background:#2f7d32;
-}
-
-.busy{
-background:#d62828;
-}
-
-.admin .day{
-cursor:pointer;
-}
-
-.admin .day:hover{
-transform:scale(1.05);
-}
-
-/* FOOTER */
-
-footer{
-background:#111;
-color:#aaa;
-text-align:center;
-padding:25px;
-margin-top:60px;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<header>
-<h1>📅 Terminy</h1>
-<p>Sprawdź dostępność terminów</p>
-</header>
+<div class="header">
+<h1>❄️ Sezon Zimowy</h1>
+<p>Odśnieżanie i zimowe usługi porządkowe</p>
+</div>
 
 <div class="container">
 
-<!-- LOGIN -->
+<h2>Usługi zimowe</h2>
 
-<div class="login-box">
+<div class="cards">
 
-<h2>Logowanie administratora</h2>
-
-<input
-type="password"
-id="password"
-placeholder="Hasło administratora">
-
-<button onclick="login()">
-Zaloguj
-</button>
-
+<div class="card">
+<h3>❄️ Odśnieżanie posesji</h3>
+<p>Chodniki, podjazdy i parkingi.</p>
 </div>
 
-<!-- PANEL -->
-
-<div class="admin-panel" id="adminPanel">
-✅ Tryb administratora aktywny —
-kliknij dzień aby oznaczyć wolny / zajęty termin.
+<div class="card">
+<h3>🧂 Posypywanie solą</h3>
+<p>Bezpieczeństwo w czasie mrozów.</p>
 </div>
 
-<!-- LEGENDA -->
-
-<div class="legend">
-
-<div class="legend-item">
-<div class="color-box green"></div>
-Wolny termin
+<div class="card">
+<h3>🏠 Odśnieżanie dachów</h3>
+<p>Usuwanie śniegu z budynków.</p>
 </div>
 
-<div class="legend-item">
-<div class="color-box red"></div>
-Zajęty termin
+<div class="card">
+<h3>🚜 Usługi interwencyjne</h3>
+<p>Wyjazdy po intensywnych opadach.</p>
 </div>
 
 </div>
 
-<!-- KALENDARZ -->
-
-<div class="calendar" id="calendar"></div>
+<a class="btn" href="index.html">← Powrót</a>
 
 </div>
-
-<footer>
-© 2026 Usługi Ogrodnicze
-</footer>
-
-<script>
-
-const ADMIN_PASSWORD = "Rodzinka1998";
-
-let adminLogged = false;
-
-const calendar = document.getElementById("calendar");
-
-const months = [
-"Styczeń","Luty","Marzec","Kwiecień",
-"Maj","Czerwiec","Lipiec","Sierpień",
-"Wrzesień","Październik","Listopad","Grudzień"
-];
-
-let busyDays =
-JSON.parse(localStorage.getItem("busyDays")) || {};
-
-function saveDays(){
-
-localStorage.setItem(
-"busyDays",
-JSON.stringify(busyDays)
-);
-
-}
-
-function login(){
-
-const pass =
-document.getElementById("password").value;
-
-if(pass === ADMIN_PASSWORD){
-
-adminLogged = true;
-
-document.body.classList.add("admin");
-
-document.getElementById(
-"adminPanel"
-).style.display="block";
-
-alert("Zalogowano jako administrator");
-
-}else{
-
-alert("Błędne hasło");
-
-}
-
-}
-
-function renderCalendar(){
-
-calendar.innerHTML="";
-
-months.forEach((month,index)=>{
-
-const monthBox =
-document.createElement("div");
-
-monthBox.classList.add("month");
-
-monthBox.innerHTML=
-`<h2>${month}</h2>`;
-
-const days =
-document.createElement("div");
-
-days.classList.add("days");
-
-for(let i=1;i<=31;i++){
-
-const day =
-document.createElement("div");
-
-const key =
-index+"-"+i;
-
-day.classList.add("day");
-
-if(busyDays[key]){
-
-day.classList.add("busy");
-
-}else{
-
-day.classList.add("free");
-
-}
-
-day.innerText=i;
-
-day.onclick=()=>{
-
-if(!adminLogged) return;
-
-busyDays[key]=!busyDays[key];
-
-saveDays();
-
-renderCalendar();
-
-};
-
-days.appendChild(day);
-
-}
-
-monthBox.appendChild(days);
-
-calendar.appendChild(monthBox);
-
-});
-
-}
-
-renderCalendar();
-
-</script>
 
 </body>
 </html>
