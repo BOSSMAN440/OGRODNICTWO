@@ -8,8 +8,8 @@
 
 <meta name="description" content="Usługi ogrodnicze Łódź i okolice. Koszenie trawy, porządki działek, montaż altan. Szybka wycena i dojazd.">
 
-<link rel="preconnect" href="https://googleapis.com">
-<link href="https://googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -88,7 +88,7 @@ nav ul li a:hover{
     height:100vh;
     background:
     linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-    url('https://unsplash.com');
+    url('https://images.unsplash.com/photo-1599685315640-9ceab2f8a5f7?q=80&w=1600&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
@@ -196,60 +196,6 @@ nav ul li a:hover{
     font-weight:700;
 }
 
-/* NOWA SEKCJA FAQ (AKORDEON) */
-.faq-container {
-    max-width: 800px;
-    margin: auto;
-}
-
-.faq-item {
-    background: white;
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,.04);
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    font-weight: 600;
-    color: var(--dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    transition: background 0.3s;
-}
-
-.faq-question:hover {
-    background: #f9fbf9;
-}
-
-.faq-toggle-icon {
-    font-size: 20px;
-    color: var(--primary);
-    transition: transform 0.3s;
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    padding: 0 20px;
-    color: #555;
-    border-top: 1px solid transparent;
-}
-
-.faq-item.active .faq-answer {
-    padding: 20px;
-    border-top: 1px solid #eee;
-}
-
-.faq-item.active .faq-toggle-icon {
-    transform: rotate(45deg);
-}
-
 .contact{
     background:var(--primary);
     color:white;
@@ -321,13 +267,12 @@ nav ul.show{display:flex;}
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 <ul id="menu">
-<li><a href="#uslugi" onclick="closeMenu()">Usługi</a></li>
-<li><a href="#sezony" onclick="closeMenu()">Sezony</a></li>
-<li><a href="#realizacje" onclick="closeMenu()">Realizacje</a></li>
-<li><a href="#dlaczego" onclick="closeMenu()">Dlaczego my</a></li>
-<li><a href="#cennik" onclick="closeMenu()">Cennik</a></li>
-<li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
-<li><a href="#kontakt" onclick="closeMenu()">Kontakt</a></li>
+<li><a href="#uslugi">Usługi</a></li>
+<li><a href="#sezony">Sezony</a></li>
+<li><a href="#realizacje">Realizacje</a></li>
+<li><a href="#dlaczego">Dlaczego my</a></li>
+<li><a href="#cennik">Cennik</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
 </ul>
 
 </div>
@@ -425,8 +370,8 @@ nav ul.show{display:flex;}
 </div>
 
 <div class="gallery">
-<img src="https://postimg.cc" alt="Realizacja 1">
-<img src="https://postimg.cc" alt="Realizacja 2">
+<img src="https://i.postimg.cc/631kYFrb/noweogrod2.jpg" alt="Realizacja 1">
+<img src="https://i.postimg.cc/BnBQMQX5/noweogrod1.png" alt="Realizacja 2">
 </div>
 
 </section>
@@ -485,37 +430,34 @@ Cennik
 
 </section>
 
-<!-- FAQ -->
-<section class="container" id="faq">
-    <div class="section-title">
-        <h2>Najczęściej zadawane pytania</h2>
-    </div>
-    
-    <div class="faq-container">
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Czy zapewniają Państwo własne worki na odpady?
-                <span class="faq-toggle-icon">+</span>
-            </div>
-            <div class="faq-answer">
-                Tak, na każde zlecenie przywozimy własne, mocne worki na odpady zielone. Po zakończeniu prac możemy je zapakować i przygotować do odbioru lub – po wcześniejszym uzgodnieniu – zająć się ich pełną utylizacją.
-            </div>
-        </div>
+<!-- KONTAKT -->
+<section class="container" id="kontakt">
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                W jakich godzinach pracujecie?
-                <span class="faq-toggle-icon">+</span>
-            </div>
-            <div class="faq-answer">
-                Pracujemy od poniedziałku do soboty w elastycznych godzinach, zazwyczaj od 7:00 do 20:00. Godzinę przyjazdu zawsze dopasowujemy do wolnego czasu i preferencji klienta.
-            </div>
-        </div>
+<div class="contact">
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Jak przygotować działkę przed Waszym przyjazdem?
-                <span class="faq-toggle-icon">+</span>
-            </div>
-            <div class="faq-answer">
+<h2>Kontakt</h2>
+
+<p>📞 505 406 257</p>
+<p>📧 pawlakk102@gmail.com</p>
+<p>📍 Łódź i okolice</p>
+
+<br>
+
+<a href="tel:+48505406257" class="btn btn-secondary">Zadzwoń teraz</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Usługi Ogrodnicze | Łódź i okolice
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
